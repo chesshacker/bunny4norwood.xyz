@@ -4,6 +4,7 @@
   "description": "bunny4norwood.xyz website",
   "main": "server.js",
   "dependencies": {
+    "aws-sdk": "^2.3.8",
     "bunyan": "^1.8.1",
     "express": "^4.13.4",
     "socket.io": "^1.4.6"
