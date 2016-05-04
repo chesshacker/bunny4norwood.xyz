@@ -1,0 +1,19 @@
+{
+  "name": "@steveortiz/bunny4norwood.xyz",
+  "version": "1.0.0",
+  "description": "bunny4norwood.xyz website",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Steve Ortiz <steve@ortizaggies.com> (https://steveortiz.github.io)",
+  "license": "ISC"
+}
