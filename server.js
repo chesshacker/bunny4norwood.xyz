@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
+const log = require('bunyan').createLogger({ name: 'b4n' });
 
 const config = {
   port: process.env.PORT || 3000
@@ -9,5 +10,5 @@ const config = {
 app.use(express.static('public'));
 
 http.listen(config.port, function(){
-  console.log('listening on *:' + config.port);
+  log.info('listening on *:' + config.port);
 });

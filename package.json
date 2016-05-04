@@ -4,14 +4,15 @@
   "description": "bunny4norwood.xyz website",
   "main": "server.js",
   "dependencies": {
+    "bunyan": "^1.8.1",
     "express": "^4.13.4"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
   },
   "scripts": {
-    "start": "node server.js",
-    "watch": "nodemon server.js"
+    "start": "node server.js | bunyan -o short",
+    "watch": "nodemon server.js | bunyan -o short"
   },
   "keywords": [],
   "author": "Steve Ortiz <steve@ortizaggies.com> (https://steveortiz.github.io)",
