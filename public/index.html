@@ -16,11 +16,40 @@
 <body>
   <div class="container">
     <h1 class="page-header">Bunny for Norwood</h1>
-    <p class="lead">Joni really needs this bunny.</p>
-    <img src="bunny.jpg" alt="cute bunny">
+    <p class="lead">Joni really needs this bunny. Tell Robin why bunnies are great!</p>
+    <div class="row">
+      <div class="col-md-7">
+        <form>
+          <div class="input-group">
+            <input id="msgInput" type="text" class="form-control" autocomplete="off" placeholder="Bunnies bring good luck">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Send!</button>
+            </span>
+          </div><!-- /input-group -->
+        </form>
+        <img src="bunny.jpg" alt="cute bunny" class="center-block" style="padding-top:20px">
+      </div><!-- /.col-md-7 -->
+      <div class="col-md-5">
+        <ul id="messages" class="list-group"></ul>
+      </div>
+    </div><!-- /.row -->
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script>
+    var MAX_NUM_MESSAGES = 8;
+    var socket = io();
+    $('form').submit(function(e){
+      e.preventDefault();
+      var msgInput = $('#msgInput');
+      socket.emit('message', msgInput.val());
+      msgInput.val('');
+    });
+    socket.on('message', function(msg){
+      $('#messages').prepend($('<li class="list-group-item">').text(msg));
+      $('#messages li:gt(' + (MAX_NUM_MESSAGES - 1) + ')').remove();
+    });
+  </script>
 </body>
 </html>
