@@ -37,6 +37,11 @@ io.on('connection', function(socket) {
     log.info('user disconnected');
   });
   socket.on('message', function(message) {
+    message = message.trim();
+    if (!message) {
+      log.info('empty message ignored');
+      return;
+    }
     log.info('message: ' + message);
     io.emit('message', message);
     messages.push(message);
