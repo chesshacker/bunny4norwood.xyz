@@ -18,14 +18,14 @@ app.use(express.static('public'));
 
 const MAX_NUM_MESSAGES = 8;
 const messages = [
-  'Bunnies make wonderful companions',
-  'Bunnies protect your home',
-  'Petting bunnies reduces stress',
-  'Bunnies are quiet',
-  'Bunnies are easily trained',
-  'Bunnies are very clean pets',
-  'Bunnies are so cute',
-  'Bunnies are easy to rescue'
+  'Bunnies usually don\'t eat children',
+  'Bunnies don\'t bark',
+  'Joni really wants a bunny and you love her',
+  'Petting bunnies calms you down when you get stressed out',
+  'Bunnies make people smile',
+  'Bunnies are adorable',
+  'Bunnies are awesome because they are sweet little bundles of fur that make you feel happy',
+  'Bunnies > Robin'
 ];
 
 io.on('connection', function(socket) {
