@@ -1,6 +1,6 @@
 {
   "name": "@steveortiz/bunny4norwood.xyz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "bunny4norwood.xyz website",
   "main": "server.js",
   "dependencies": {
